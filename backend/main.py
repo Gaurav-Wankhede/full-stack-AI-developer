@@ -3,14 +3,13 @@ import pandas as pd
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.encoders import jsonable_encoder
-from mangum import Mangum
 
 app = FastAPI()
 
 # Add CORS middleware
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=["http://localhost:3000"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -113,8 +112,6 @@ async def add_fund(fund_data: dict):
 async def add_company(company_data: dict):
     # Add new company logic here
     return {"message": "Company added successfully"}
-
-handler = Mangum(app)
 
 if __name__ == "__main__":
     import uvicorn

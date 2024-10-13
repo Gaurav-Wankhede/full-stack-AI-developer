@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "vercel-build": "pip install -r backend/requirements.txt && next build"
+    "vercel-build": "python -m ensurepip && python -m pip install --upgrade pip && python -m pip install -r backend/requirements.txt && next build"
   },
   "dependencies": {
     "@radix-ui/react-dropdown-menu": "^2.1.2",

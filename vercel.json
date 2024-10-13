@@ -1,8 +1,24 @@
 {
-  "buildCommand": "npm run vercel-build",
-  "outputDirectory": "src/.next",
+  "buildCommand": "next build",
+  "outputDirectory": ".next",
   "rewrites": [
-    { "source": "/api/(.*)", "destination": "/api/index.py" },
-    { "source": "/(.*)", "destination": "/src/$1" }
-  ]
+    {
+      "source": "/api/(.*)", 
+      "destination": "/api/index"
+    },
+    {
+      "source": "/(.*)", 
+      "destination": "/src/$1"
+    }
+  ],
+  "env": {
+    "PYTHON_VERSION": "3.9"
+  },
+  "functions": {
+    "api/*.py": {
+      "runtime": "python3.9"
+    }
+  }
 }
+
+

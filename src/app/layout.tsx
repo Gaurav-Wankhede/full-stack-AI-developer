@@ -1,7 +1,7 @@
 import './globals.css'
 import { ThemeProvider } from "next-themes"
 import { ThemeToggle } from "@/components/theme-toggle"
-import { Providers } from "./providers"
+import { Providers } from "./provider"
 
 export const metadata = {
   title: 'Investment Fund Dashboard',
